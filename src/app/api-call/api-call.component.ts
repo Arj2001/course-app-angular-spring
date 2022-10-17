@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-api-call',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApiCallComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myApi:ApiService) {
 
-  name = 'Arjun'
+    this.putValue()
+   }
+
+  name:any
+
+  putValue=()=>{
+
+    this.myApi.getValue().subscribe(
+      (data)=>{
+        this.name = data
+      }
+    )
+
+  }
 
   ngOnInit(): void {
   }

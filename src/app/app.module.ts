@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiCallComponent } from './api-call/api-call.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from "@angular/common/http";
 
 const addRoute:Routes = [
   {
@@ -20,7 +21,8 @@ const addRoute:Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(addRoute)
+    RouterModule.forRoot(addRoute),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
