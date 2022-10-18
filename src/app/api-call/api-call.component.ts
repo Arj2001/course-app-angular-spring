@@ -13,13 +13,14 @@ export class ApiCallComponent implements OnInit {
     this.putValue()
    }
 
-  name:any
+  value:any
 
   putValue=()=>{
 
     this.myApi.getValue().subscribe(
       (data)=>{
-        this.name = data
+        this.value = data
+        console.log(data)
       }
     )
 
